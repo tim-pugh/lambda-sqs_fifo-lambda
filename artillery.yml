@@ -1,0 +1,12 @@
+# https://artillery.io/docs/guides/getting-started/installing-artillery.html
+# HOW TO RUN A LOAD TEST: artillery run artillery.yml
+config:
+  target: "https://<insert_api_id>.execute-api.us-west-2.amazonaws.com/Prod"
+  phases:
+    - duration: 1
+      arrivalRate: 200
+      name: Warm up
+scenarios:
+  - flow:
+    - get:
+        url: "/hello"
